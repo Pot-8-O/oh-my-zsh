@@ -1,12 +1,21 @@
 #!/bin/sh
 #
 # This script should be run via curl:
+<<<<<<< HEAD
 #   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # or wget:
 #   sh -c "$(wget -qO- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #
 # As an alternative, you can first download the install script and run it afterwards:
 #   wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+=======
+#   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# or wget:
+#   sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#
+# As an alternative, you can first download the install script and run it afterwards:
+#   wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 #   sh install.sh
 #
 # You can tweak the install behavior by setting variables when running the script. For
@@ -15,17 +24,31 @@
 #
 # Respects the following environment variables:
 #   ZSH     - path to the Oh My Zsh repository folder (default: $HOME/.oh-my-zsh)
+<<<<<<< HEAD
 #   REPO    - name of the GitHub repo to install from (default: robbyrussell/oh-my-zsh)
+=======
+#   REPO    - name of the GitHub repo to install from (default: ohmyzsh/ohmyzsh)
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 #   REMOTE  - full remote URL of the git repo to install (default: GitHub via HTTPS)
 #   BRANCH  - branch to check out immediately after install (default: master)
 #
 # Other options:
+<<<<<<< HEAD
 #   CHSH    - 'no' means the installer will not change the default shell (default: yes)
 #   RUNZSH  - 'no' means the installer will not run zsh after the install (default: yes)
+=======
+#   CHSH       - 'no' means the installer will not change the default shell (default: yes)
+#   RUNZSH     - 'no' means the installer will not run zsh after the install (default: yes)
+#   KEEP_ZSHRC - 'yes' means the installer will not replace an existing .zshrc (default: no)
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 #
 # You can also pass some arguments to the install script to set some these options:
 #   --skip-chsh: has the same behavior as setting CHSH to 'no'
 #   --unattended: sets both CHSH and RUNZSH to 'no'
+<<<<<<< HEAD
+=======
+#   --keep-zshrc: sets KEEP_ZSHRC to 'yes'
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 # For example:
 #   sh install.sh --unattended
 #
@@ -33,13 +56,21 @@ set -e
 
 # Default settings
 ZSH=${ZSH:-~/.oh-my-zsh}
+<<<<<<< HEAD
 REPO=${REPO:-robbyrussell/oh-my-zsh}
+=======
+REPO=${REPO:-ohmyzsh/ohmyzsh}
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
 BRANCH=${BRANCH:-master}
 
 # Other options
 CHSH=${CHSH:-yes}
 RUNZSH=${RUNZSH:-yes}
+<<<<<<< HEAD
+=======
+KEEP_ZSHRC=${KEEP_ZSHRC:-no}
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 
 
 command_exists() {
@@ -111,6 +142,14 @@ setup_zshrc() {
 	# Must use this exact name so uninstall.sh can find it
 	OLD_ZSHRC=~/.zshrc.pre-oh-my-zsh
 	if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
+<<<<<<< HEAD
+=======
+		# Skip this if the user doesn't want to replace an existing .zshrc
+		if [ $KEEP_ZSHRC = yes ]; then
+			echo "${YELLOW}Found ~/.zshrc.${RESET} ${GREEN}Keeping...${RESET}"
+			return
+		fi
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 		if [ -e "$OLD_ZSHRC" ]; then
 			OLD_OLD_ZSHRC="${OLD_ZSHRC}-$(date +%Y-%m-%d_%H-%M-%S)"
 			if [ -e "$OLD_OLD_ZSHRC" ]; then
@@ -129,10 +168,16 @@ setup_zshrc() {
 
 	echo "${GREEN}Using the Oh My Zsh template file and adding it to ~/.zshrc.${RESET}"
 
+<<<<<<< HEAD
 	cp "$ZSH/templates/zshrc.zsh-template" ~/.zshrc
 	sed "/^export ZSH=/ c\\
 export ZSH=\"$ZSH\"
 " ~/.zshrc > ~/.zshrc-omztemp
+=======
+	sed "/^export ZSH=/ c\\
+export ZSH=\"$ZSH\"
+" "$ZSH/templates/zshrc.zsh-template" > ~/.zshrc-omztemp
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 	mv -f ~/.zshrc-omztemp ~/.zshrc
 
 	echo
@@ -228,6 +273,10 @@ main() {
 		case $1 in
 			--unattended) RUNZSH=no; CHSH=no ;;
 			--skip-chsh) CHSH=no ;;
+<<<<<<< HEAD
+=======
+			--keep-zshrc) KEEP_ZSHRC=yes ;;
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 		esac
 		shift
 	done

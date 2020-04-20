@@ -8,7 +8,11 @@ To use it, add emotty to the plugins array in your zshrc file:
 plugins=(... emotty)
 ```
 
+<<<<<<< HEAD
 **NOTE:** it requires the [emoji plugin](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/emoji).
+=======
+**NOTE:** it requires the [emoji plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/emoji).
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 
 ## Usage
 

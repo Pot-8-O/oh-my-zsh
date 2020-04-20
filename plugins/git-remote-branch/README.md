@@ -3,8 +3,14 @@
 This plugin adds completion for [`grb`](https://github.com/webmat/git_remote_branch),
 or `git_remote_branch`.
 
+<<<<<<< HEAD
 To use it, add `git-remote-branch` to the plugins array of your `.zshrc` file:
 ```
+=======
+To use it, add `git-remote-branch` to the plugins array of your zshrc file:
+
+```zsh
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 plugins=(... git-remote-branch)
 ```
 

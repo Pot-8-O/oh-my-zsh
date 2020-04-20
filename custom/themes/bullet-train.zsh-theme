@@ -21,6 +21,7 @@ if [ ! -n "${BULLETTRAIN_PROMPT_ORDER+1}" ]; then
     time
     status
     custom
+    ssh
     context
     dir
     screen
@@ -83,6 +84,17 @@ if [ ! -n "${BULLETTRAIN_CUSTOM_BG+1}" ]; then
 fi
 if [ ! -n "${BULLETTRAIN_CUSTOM_FG+1}" ]; then
   BULLETTRAIN_CUSTOM_FG=default
+fi
+
+# CUSTOM
+if [ ! -n "${BULLETTRAIN_SSH_MSG+1}" ]; then
+  BULLETTRAIN_SSH_MSG="SSH"
+fi
+if [ ! -n "${BULLETTRAIN_SSH_BG+1}" ]; then
+  BULLETTRAIN_SSH_BG=blue
+fi
+if [ ! -n "${BULLETTRAIN_SSH_FG+1}" ]; then
+  BULLETTRAIN_SSH_FG=default
 fi
 
 # VIRTUALENV
@@ -412,6 +424,15 @@ prompt_custom() {
   local custom_msg
   eval custom_msg=$BULLETTRAIN_CUSTOM_MSG
   [[ -n "${custom_msg}" ]] && prompt_segment $BULLETTRAIN_CUSTOM_BG $BULLETTRAIN_CUSTOM_FG "${custom_msg}"
+}
+
+# SSH
+prompt_ssh() {
+  local ssh_msg
+  eval ssh_msg=$BULLETTRAIN_SSH_MSG
+  if [[ -n $BULLETTRAIN_IS_SSH_CLIENT ]]; then
+    prompt_segment $BULLETTRAIN_SSH_BG $BULLETTRAIN_SSH_FG "${ssh_msg}"
+  fi
 }
 
 # Git

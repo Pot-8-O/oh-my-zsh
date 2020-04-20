@@ -1,9 +1,23 @@
 # VScode zsh plugin
-# author: https://github.com/MarsiBarsi
+# Authors:
+#   https://github.com/MarsiBarsi (original author)
+#   https://github.com/babakks
 
+<<<<<<< HEAD
 # Use main Visual Studio Code version by default
 : ${VSCODE:=code}
 
+=======
+# Use the stable VS Code release, unless the Insiders version is the only
+# available installation
+if ! which code > /dev/null && which code-insiders > /dev/null; then
+  : ${VSCODE:=code-insiders}
+else
+  : ${VSCODE:=code}
+fi
+
+# Define aliases
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 alias vsc="$VSCODE ."
 alias vsca="$VSCODE --add"
 alias vscd="$VSCODE --diff"

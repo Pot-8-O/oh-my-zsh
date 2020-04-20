@@ -10,8 +10,15 @@ function setup_using_base_dir() {
     if [[ -z "${fzf_base}" ]]; then
         fzfdirs=(
           "${HOME}/.fzf"
+<<<<<<< HEAD
           "/usr/local/opt/fzf"
           "/usr/share/fzf"
+=======
+          "${HOME}/.nix-profile/share/fzf"
+          "/usr/local/opt/fzf"
+          "/usr/share/fzf"
+          "/usr/local/share/examples/fzf"
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
         )
         for dir in ${fzfdirs}; do
             if [[ -d "${dir}" ]]; then
@@ -30,8 +37,13 @@ function setup_using_base_dir() {
     fi
 
     if [[ -d "${fzf_base}" ]]; then
+<<<<<<< HEAD
         # Fix fzf shell directory for Archlinux package
         if [[ ! -d "${fzf_base}/shell" ]] && [[ -f /etc/arch-release ]]; then
+=======
+        # Fix fzf shell directory for Arch Linux, NixOS or Void Linux packages
+        if [[ ! -d "${fzf_base}/shell" ]]; then
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
           fzf_shell="${fzf_base}"
         else
           fzf_shell="${fzf_base}/shell"
@@ -67,7 +79,14 @@ function setup_using_debian_package() {
     # NOTE: There is no need to configure PATH for debian package, all binaries
     # are installed to /usr/bin by default
 
+<<<<<<< HEAD
     local completions="/usr/share/zsh/vendor-completions/_fzf"
+=======
+    # Determine completion file path: first bullseye/sid, then buster/stretch
+    local completions="/usr/share/doc/fzf/examples/completion.zsh"
+    [[ -f "$completions" ]] || completions="/usr/share/zsh/vendor-completions/_fzf"
+
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
     local key_bindings="/usr/share/doc/fzf/examples/key-bindings.zsh"
 
     # Auto-completion

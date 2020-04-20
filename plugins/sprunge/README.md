@@ -3,7 +3,12 @@
 This plugin uploads data and fetch URL from the pastebin http://sprunge.us
 
 To enable it, add 'sprunge' to your plugins:
+<<<<<<< HEAD
 ```
+=======
+
+```zsh
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 plugins=(... sprunge)
 ```
 

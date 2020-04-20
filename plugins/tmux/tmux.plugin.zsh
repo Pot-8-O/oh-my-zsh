@@ -36,6 +36,11 @@ alias tkss='tmux kill-session -t'
 : ${ZSH_TMUX_FIXTERM_WITH_256COLOR:=screen-256color}
 # Set the configuration path
 : ${ZSH_TMUX_CONFIG:=$HOME/.tmux.conf}
+<<<<<<< HEAD
+=======
+# Set -u option to support unicode
+: ${ZSH_TMUX_UNICODE:=false}
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 
 # Determine if the terminal supports 256 colors
 if [[ $terminfo[colors] == 256 ]]; then
@@ -62,6 +67,7 @@ function _zsh_tmux_plugin_run() {
   local -a tmux_cmd
   tmux_cmd=(command tmux)
   [[ "$ZSH_TMUX_ITERM2" == "true" ]] && tmux_cmd+=(-CC)
+  [[ "$ZSH_TMUX_UNICODE" == "true" ]] && tmux_cmd+=(-u)
 
   # Try to connect to an existing session.
   [[ "$ZSH_TMUX_AUTOCONNECT" == "true" ]] && $tmux_cmd attach

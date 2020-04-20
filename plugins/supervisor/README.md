@@ -5,6 +5,10 @@ Supervisor is a client/server system that allows its users to monitor and contro
 of processes on UNIX-like operating systems.
 
 To use it, add `supervisor` to the plugins array in your zshrc file:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 ```zsh
 plugins=(... supervisor)
 ```

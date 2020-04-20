@@ -8,7 +8,12 @@ To use it, add `rvm` to the plugins array in your zshrc file:
 plugins=(... rvm)
 ```
 
+<<<<<<< HEAD
 ## Functions
+=======
+## Aliases
+
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 | Alias          | Command              |
 |----------------|----------------------|
 | `rb18`         | `rvm use ruby-1.8.7` |

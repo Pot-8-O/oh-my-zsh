@@ -1,6 +1,12 @@
 # encode64
 
-Alias plugin for encoding or decoding using `base64` command
+Alias plugin for encoding or decoding using `base64` command.
+
+To use it, add `encode64` to the plugins array in your zshrc file:
+
+```zsh
+plugins=(... encode64)
+```
 
 ## Functions and Aliases
 
@@ -9,6 +15,7 @@ Alias plugin for encoding or decoding using `base64` command
 | `encode64` | `e64` | Encodes given data to base64   |
 | `decode64` | `d64` | Decodes given data from base64 |
 
+<<<<<<< HEAD
 ## Enabling plugin
 
 1. Edit your `.zshrc` file and add `encode64` to the list of plugins:
@@ -26,6 +33,8 @@ Alias plugin for encoding or decoding using `base64` command
    exec zsh
    ```
 
+=======
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
 ## Usage and examples
 
 ### Encoding

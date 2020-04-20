@@ -5,4 +5,8 @@ custom/
 cache/
 log/
 *.swp
+<<<<<<< HEAD
 /.idea
+=======
+.DS_Store
+>>>>>>> 31eca46ee3b94ca84a038628e0bf6089a7488908
